@@ -1,0 +1,66 @@
+
+{
+"presidentialTrivia": [
+  {
+    "question": "Which President was known for his 'fireside chats'?",
+    "answers": ["Theodore Roosevelt", "Franklin D. Roosevelt", "George Washington", "Abraham Lincoln"],
+    "correctAnswer": "Franklin D. Roosevelt",
+    "explanation": "Franklin D. Roosevelt delivered his 'fireside chats' over the radio to communicate directly with the American public."
+  },
+  {
+    "question": "Who was the tallest President of the United States?",
+    "answers": ["George Washington", "Abraham Lincoln", "Barack Obama", "Thomas Jefferson"],
+    "correctAnswer": "Abraham Lincoln",
+    "explanation": "Standing at 6'4'', Abraham Lincoln was the tallest U.S. President."
+  },
+  {
+    "question": "Which President signed the Emancipation Proclamation?",
+    "answers": ["George Washington", "Andrew Jackson", "Abraham Lincoln", "Ulysses S. Grant"],
+    "correctAnswer": "Abraham Lincoln",
+    "explanation": "Abraham Lincoln signed the Emancipation Proclamation in 1863, declaring that all enslaved people in Confederate territory were to be set free."
+  },
+  {
+    "question": "Who was the first President to reside in the White House?",
+    "answers": ["Thomas Jefferson", "John Adams", "George Washington", "James Madison"],
+    "correctAnswer": "John Adams",
+    "explanation": "John Adams, the second president, was the first to reside in the White House."
+  },
+  {
+    "question": "Which President served the shortest term in office?",
+    "answers": ["James K. Polk", "William Henry Harrison", "John F. Kennedy", "Zachary Taylor"],
+    "correctAnswer": "William Henry Harrison",
+    "explanation": "William Henry Harrison served only 32 days in office before dying of pneumonia."
+  },
+  {
+    "question": "Who was the only President to serve non-consecutive terms?",
+    "answers": ["Grover Cleveland", "Theodore Roosevelt", "Woodrow Wilson", "Calvin Coolidge"],
+    "correctAnswer": "Grover Cleveland",
+    "explanation": "Grover Cleveland was the 22nd and 24th President, serving non-consecutive terms."
+  },
+  {
+    "question": "Which President was a peanut farmer before his presidency?",
+    "answers": ["Jimmy Carter", "George Washington", "Abraham Lincoln", "Dwight D. Eisenhower"],
+    "correctAnswer": "Jimmy Carter",
+    "explanation": "Jimmy Carter, the 39th President, was a peanut farmer in Georgia before his presidency."
+  },
+  {
+    "question": "Who was the first President to be impeached?",
+    "answers": ["Richard Nixon", "Bill Clinton", "Andrew Johnson", "Donald Trump"],
+    "correctAnswer": "Andrew Johnson",
+    "explanation": "Andrew Johnson was the first President to be impeached in 1868, but was acquitted by the Senate."
+  },
+  {
+    "question": "Which President was in office during the stock market crash of 1929?",
+    "answers": ["Herbert Hoover", "Franklin D. Roosevelt", "Calvin Coolidge", "Woodrow Wilson"],
+    "correctAnswer": "Herbert Hoover",
+    "explanation": "Herbert Hoover was in office during the stock market crash of 1929, which marked the beginning of the Great Depression."
+  },
+  {
+    "question": "Which President is known for the 'New Deal'?",
+    "answers": ["Franklin D. Roosevelt", "Herbert Hoover", "Woodrow Wilson", "Harry S. Truman"],
+    "correctAnswer": "Franklin D. Roosevelt",
+    "explanation": "Franklin D. Roosevelt implemented the 'New Deal' programs in response to the Great Depression."
+  }
+]
+}
+Program ended with exit code: 0

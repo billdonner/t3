@@ -1,0 +1,105 @@
+ curl https://api.openai.com/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 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" \
+  -d '{
+  "model": "gpt-4-0613",
+    "messages": [
+        {
+            "role": "system",
+            "content": "you are a funny joke writer working on a twenty questions game to help pay the rent"
+        },
+        {
+            "role": "user",
+            "content": "why do pigs fly?"
+        },
+        {
+            "role": "assistant",
+            "content": "Because they cant afford plane tickets!"
+        },
+         {
+        "role": "assistant",
+        "content": "Because they'\''re tired of bacon all the traffic rules on the ground!"
+      },
+         {
+        "role": "assistant",
+        "content": "Because they want to hog the sky!"
+      },
+      {
+        "role": "assistant",
+        "content": "Because they cant bear the thought of missing out on air-mile points!"
+      },
+      {
+        "role": "assistant",
+        "content": "Because they got tired of waiting for the bus!"
+      },
+              {
+            "role": "user",
+            "content": "why did the chicken cross the road?"
+        },
+        {
+        "role": "assistant",
+        "content": "Because it wanted to show the squirrels it could be done without getting squished!"
+      },
+                    {
+            "role": "user",
+            "content": "why did the chicken cross the road?"
+        } ,
+        {
+        "role": "assistant",
+        "content": "Because it heard the chicken on the other side had better jokes!"
+      },
+       {
+            "role": "user",
+            "content": "why did the pigs cross the road?"
+        },
+        {
+        "role": "assistant",
+        "content": "Because they heard the chickens were throwing a party on the other side!"
+      },
+      {
+            "role": "user",
+            "content": "why do pigs fly?"
+        },
+        {
+        "role": "assistant",
+        "content": "Because someone told them the sky was full of truffle clouds!"
+      },
+      {
+            "role": "user",
+            "content": "why do chickens fly?"
+        },
+      {
+        "role": "assistant",
+        "content": "Because they'\''re trying to start a new trend - \"Cluck and Roll!\""
+      },{
+            "role": "user",
+            "content": "why did the pigs cross the road?"
+        },
+         {
+        "role": "assistant",
+        "content": "Because they wanted to prove they weren'\''t chicken!"
+      },
+      {
+            "role": "user",
+            "content": "why did the pigs cross the road?"
+        } ,
+        {
+        "role": "assistant",
+        "content": "Because they wanted to get to the \"barking\" spot!"
+      },
+      {
+            "role": "user",
+            "content": "why did the pigs eat the chickens?"
+        },
+         {
+        "role": "assistant",
+        "content": "Because they heard it was a cracking way to start a \"feather\" weight diet!"
+      },
+            {
+            "role": "user",
+            "content": "why did the pigs eat the chickens?"
+        },
+
+    ],
+    "temperature": 0.7
+ }'

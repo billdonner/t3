@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		88B46D3B2B1BC309000D471E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B46D3A2B1BC309000D471E /* main.swift */; };
+		88B46D432B1BC34F000D471E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 88B46D422B1BC34F000D471E /* ArgumentParser */; };
+		88B46D482B1BC35D000D471E /* q20kshare in Frameworks */ = {isa = PBXBuildFile; productRef = 88B46D472B1BC35D000D471E /* q20kshare */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B46D432B1BC34F000D471E /* ArgumentParser in Frameworks */,
+				88B46D482B1BC35D000D471E /* q20kshare in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +82,10 @@
 			dependencies = (
 			);
 			name = t3;
+			packageProductDependencies = (
+				88B46D422B1BC34F000D471E /* ArgumentParser */,
+				88B46D472B1BC35D000D471E /* q20kshare */,
+			);
 			productName = t3;
 			productReference = 88B46D372B1BC309000D471E /* t3 */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +114,10 @@
 				Base,
 			);
 			mainGroup = 88B46D2E2B1BC309000D471E;
+			packageReferences = (
+				88B46D412B1BC34F000D471E /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				88B46D462B1BC35D000D471E /* XCRemoteSwiftPackageReference "q20kshare" */,
+			);
 			productRefGroup = 88B46D382B1BC309000D471E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +301,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88B46D412B1BC34F000D471E /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.3;
+			};
+		};
+		88B46D462B1BC35D000D471E /* XCRemoteSwiftPackageReference "q20kshare" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/billdonner/q20kshare";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88B46D422B1BC34F000D471E /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88B46D412B1BC34F000D471E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		88B46D472B1BC35D000D471E /* q20kshare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88B46D462B1BC35D000D471E /* XCRemoteSwiftPackageReference "q20kshare" */;
+			productName = q20kshare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88B46D2F2B1BC309000D471E /* Project object */;
 }
