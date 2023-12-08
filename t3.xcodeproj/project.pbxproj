@@ -62,8 +62,8 @@
 		88B46D392B1BC309000D471E /* t3 */ = {
 			isa = PBXGroup;
 			children = (
-				88B46D3A2B1BC309000D471E /* main.swift */,
 				884845C72B1D14D100B5437A /* README.md */,
+				88B46D3A2B1BC309000D471E /* main.swift */,
 			);
 			path = t3;
 			sourceTree = "<group>";

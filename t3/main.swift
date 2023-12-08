@@ -9,20 +9,25 @@ import Foundation
 import q20kshare
 import ArgumentParser
 
-struct QuestionsModelEntry {
+let t3_version = "0.3.3"
+
+struct QuestionsModelEntry: Codable {
   let question:String
   let answers:[String]
   let correct:String
   let explanation:String
   let hint:String
 }
-struct QuestionsModelResponse {
+struct QuestionsModelResponse : Codable {
   let questions:[QuestionsModelEntry]
   
 }
-
+struct VeracityModelResponse : Codable {
+  let truthfullness:[Truthe]
+}
+  
 // Function to call the OpenAI API
-func callOpenAI(APIKey: String,semaphore:DispatchSemaphore, model:String, systemMessage: String, userMessage: String) {
+func callOpenAI(APIKey: String,semaphore:DispatchSemaphore, model:String, systemMessage: String, userMessage: String, ldmode:Bool) {
   // Construct the API request payload
 
   let baseURL = "https://api.openai.com/v1/chat/completions"
@@ -79,6 +84,16 @@ func callOpenAI(APIKey: String,semaphore:DispatchSemaphore, model:String, system
       
       print(">assistant:\n")
       print("\(content)")
+      if let data = content.data(using:.utf8) {
+        if ldmode {
+          
+            let yy = try JSONDecoder().decode(VeracityModelResponse.self,from:data)
+            print(">assistant veracity response decoded correcty\n")
+        } else {
+          let zz = try JSONDecoder().decode(QuestionsModelResponse.self,from:data)
+          print(">assistant primary response decoded correcty\n")
+        }
+      }
       
       semaphore.signal()
     }
@@ -92,7 +107,7 @@ struct T3: ParsableCommand   {
   static var configuration = CommandConfiguration(
     abstract: "Pump One Cycle",
     discussion: "choose LLM and run one chat cycle",
-    version: "0.3.2")
+    version: t3_version )
   
   
   @Option(help: "system template")
@@ -102,10 +117,13 @@ struct T3: ParsableCommand   {
   var usrurl: String
   
   @Option( help:"model")
-  var model: String
+  var model: String = "gpt-0613"
   
-  @Option( help:"listmodels")
-  var listmodels: String = ""
+  @Flag(help: "lie detector mode")
+  var ldmode = false
+  
+  @Flag( help:"listmodels")
+  var listmodels: Bool = false
   
   mutating func run() throws {
     
@@ -114,7 +132,7 @@ struct T3: ParsableCommand   {
       
       let apiKey = try getAPIKey()
       
-      guard listmodels.count==0 else {
+      guard listmodels == false  else {
         listModels(apiKey: apiKey)
         return
       }
@@ -125,8 +143,7 @@ struct T3: ParsableCommand   {
       guard let usr = URL(string:usrurl) else {
         fatalError("Invalid user template URL")
       }
-      let chatmodel:String =  model != "" ?   model : "gpt-0613"
-      
+    
       
       let sysdata = try Data(contentsOf:sys)
       guard let systemMessage = String(data:sysdata,encoding: .utf8) else {
@@ -137,7 +154,7 @@ struct T3: ParsableCommand   {
         fatalError("Cant decode user template")
       }
 
-      print(">Calling ChatGPT \(chatmodel)")
+      print(">Calling ChatGPT \(model)")
       print("system: ",systemMessage)
       let time1 = Date()
       var i = 0
@@ -151,13 +168,14 @@ struct T3: ParsableCommand   {
         let semaphore = DispatchSemaphore(value: 0)
         callOpenAI(APIKey: apiKey,
                    semaphore:semaphore,
-                   model: chatmodel,
+                   model: model,
                    systemMessage:  systemMessage,
-                   userMessage: umsg)
+                   userMessage: umsg, 
+                   ldmode: ldmode)
         
         semaphore.wait()
         let elapsed = Date().timeIntervalSince(time1)
-        print(">ChatGPT \(chatmodel) returned in \(elapsed) secs")
+        print(">ChatGPT \(model) returned in \(elapsed) secs")
       }
     }
     
