@@ -2,7 +2,7 @@
 
 version  0.3.3, ai = "chatgpt"
 
-
+in progress
 
 ## Step 1 - ask the AI for "N" question blocks
 
